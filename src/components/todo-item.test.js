@@ -14,10 +14,10 @@ describe('TodoItem', () => {
     it('should invoke removeTodo after click on button', () => {
         const removeTodo = jest.fn();
 
-        const wrapper = shallow (<TodoItem item={todo}/> );
+        const wrapper = shallow (<TodoItem item={todo} removeTodo={removeTodo}/> );
 
         wrapper.find('button').simulate('click');
 
-        expect(removeTodo).toHaveBeenCallwdWith(1);
+        expect(removeTodo).toHaveBeenCalledWith(1);
     })
 });
